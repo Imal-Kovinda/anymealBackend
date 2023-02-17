@@ -6,7 +6,7 @@ const AppError = require('./utils/appError');
 const errorHandler = require('./utils/errorHandler');
 
 const router_ava_meals = require('./routes/route_availableMeals');
-
+const router_orders = require('./routes/route_orders');
 //link for hansana page
 //medium.com/@hansana876/build-a-rest-api-with-node-js-express-and-mysql-3789a47b7b03
 
@@ -23,6 +23,7 @@ app.use(express.json());
 app.use("/student", router_student);
 app.use("/teacher", router_teacher);
 app.use("/addMeals", router_ava_meals);
+app.use("/orders", router_orders);
 
 app.use(errorHandler);
 
