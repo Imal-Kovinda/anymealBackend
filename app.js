@@ -24,10 +24,11 @@ app.use(express.json());
 
 app.use("/student", router_student);
 app.use("/teacher", router_teacher);
+
 app.use("/addMeals", router_ava_meals);
 app.use("/orders", router_orders);
 app.use("/meals", router_meals);
-app.use("/regCustomer", router_customer);
+app.use("/customer", router_customer);
 
 app.use(errorHandler);
 
