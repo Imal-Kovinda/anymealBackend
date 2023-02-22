@@ -1,8 +1,8 @@
 const express = require("express");
-const { addMeals } = require('../controller/AvailableMeals')
+const { availableMeals } = require('../controller/AvailableMeals')
 
 const router = express.Router();
 
-router.route("/").post(addMeals)
+router.route("/").post(availableMeals)
 
 module.exports = router;

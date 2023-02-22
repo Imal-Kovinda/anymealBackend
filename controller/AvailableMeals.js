@@ -1,7 +1,7 @@
 const conn = require('../services/database');
 const AppError = require('../utils/appError');
 
-exports.addMeals = (req, res, next) => {
+exports.availableMeals = (req, res, next) => {
     if(!req.body) return next(new AppError("No from data form!", 401))
 
     const meals = [req.body.meal_id, req.body.availability]

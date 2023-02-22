@@ -28,7 +28,7 @@ exports.getCustDetails = (req, res, next) => {
                 email: data[0].email,
                 address: data[0].address,
                 mobile: data[0].mobile
-                
+
 
             })
         }
