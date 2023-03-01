@@ -5,6 +5,6 @@ const router = express.Router();
 
 router.route("/").post(meals)
 router.route("/").get(viewMeals)
-router.route("/").delete(removeMeal)
+router.route("/").put(removeMeal)
 
 module.exports = router;
