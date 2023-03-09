@@ -9,6 +9,7 @@ const router_ava_meals = require('./routes/route_availableMeals');
 const router_orders = require('./routes/route_orders');
 const router_meals = require('./routes/route_meals');
 const router_customer = require('./routes/route_customerDetails');
+const router_carsual = require('./routes/route_carsual');
 const cors = require('cors');
 //link for hansana page
 //medium.com/@hansana876/build-a-rest-api-with-node-js-express-and-mysql-3789a47b7b03
@@ -30,6 +31,7 @@ app.use("/availableMeals", router_ava_meals);
 app.use("/orders", router_orders);
 app.use("/meals", router_meals);
 app.use("/customer", router_customer);
+app.use("/carsual", router_carsual);
 
 app.use(errorHandler);
 
