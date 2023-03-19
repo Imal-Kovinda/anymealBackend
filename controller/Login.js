@@ -1,14 +1,11 @@
 const conn = require('../services/database');
 const AppError = require('../utils/appError');
 
-exports.getToCard = (req, res, next) => {
+exports.login = (req, res, next) => {
     if (!req.body) return next(new AppError("No from data form!", 401))
-    const mealId = req.body.meal_id;
-    console.log("mealId o"+mealId);
-  
-
-    //const meals = [req.body.meal_name, req.body.discription, req.body.price]
-    conn.query(`SELECT meal_name, discription, price FROM meals WHERE status='1' AND meal_id= ${mealId}`, (err, data, fields) => {
+    const userName = req.body.user_name;
+    const pwd = req.body.password;
+    conn.query(`SELECT * FROM user WHERE user_name="${userName}" AND password="${pwd}"`, (err,data, fields) => {
         if (err) {
             res.status("401").json({
                 data: err
