@@ -4,8 +4,8 @@ const AppError = require('../utils/appError');
 exports.meals = (req, res, next) => {
     if (!req.body) return next(new AppError("No from data form!", 401))
 
-    const meals = [req.body.meal_name, req.body.discription, req.body.price]
-    conn.query("INSERT INTO `meals`(`meal_id`, `meal_name`, `discription`, `price`, `status`) VALUES (NULL, ?, 1)", [meals], (err, data, fields) => {
+    const meals = [req.body.meal_name, req.body.discription, req.body.price, req.body.meal_name]
+    conn.query("INSERT INTO `meals`(`meal_id`, `meal_name`, `discription`, `price`, `img`, `status`) VALUES (NULL, ?, 1)", [meals], (err, data, fields) => {
         if (err) return next(new AppError(err, 500));
         res.status("201").json({
             data: "Success"
