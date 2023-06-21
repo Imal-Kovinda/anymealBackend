@@ -17,7 +17,7 @@ exports.viewMeals = (req, res, next) => {
     if (!req.body) return next(new AppError("No from data form!", 401))
 
     //const meals = [req.body.meal_name, req.body.discription, req.body.price]
-    conn.query("SELECT meal_id, meal_name, discription, price FROM `meals` WHERE status='1'", (err, data, fields) => {
+    conn.query("SELECT meal_id, meal_name, discription, price, img FROM `meals` WHERE status='1'", (err, data, fields) => {
         if (err) {
             res.status("401").json({
                 data: err
